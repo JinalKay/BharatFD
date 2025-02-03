@@ -1,0 +1,89 @@
+{% extends "rest_framework/base.html" %}
+
+{% block branding %}
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/" style="color: #ff6b6b; font-weight: 700; font-size: 1.5em;">
+            🚀 FAQ API 
+            <span class="version">v1.0</span>
+        </a>
+    </div>
+{% endblock %}
+
+{% block style %}
+{{ block.super }}  <!-- Preserve default DRF styles -->
+<style>
+    :root {
+        --primary-color: #ff6b6b;
+        --background: #f8f9fa;
+        --text-dark: #2d3436;
+    }
+
+    body {
+        background: var(--background);
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        color: var(--text-dark);
+    }
+
+    .navbar {
+        background: #ffffff !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid #eee !important;
+    }
+
+    .wrapper {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+    }
+
+    .btn-primary {
+        background: var(--primary-color);
+        border: none;
+        border-radius: 8px;
+        padding: 8px 16px;
+        transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+        filter: brightness(0.9);
+        transform: translateY(-1px);
+    }
+
+    .breadcrumb {
+        background: transparent !important;
+        padding-left: 0 !important;
+    }
+
+    /* Better response rendering */
+    .response-info {
+        background: #f8f9fa !important;
+        border-radius: 8px;
+        padding: 1.5rem !important;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .wrapper {
+            margin: 1rem;
+            padding: 1rem;
+        }
+        
+        .navbar-brand {
+            font-size: 1.2em !important;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block userlinks %}
+    <!-- Customize user links if needed -->
+    {{ block.super }}
+{% endblock %}
